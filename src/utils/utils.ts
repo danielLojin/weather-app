@@ -5,7 +5,7 @@ export async function getLocationCords(
   city: string
 ): Promise<Result<{ lat: number; lon: number }, string>> {
   try {
-    const GEO_URL = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${
+    const GEO_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${
       import.meta.env.VITE_WEATHER_API_KEY
     }`;
 
@@ -80,7 +80,7 @@ export function getGeolocation(): Promise<
 
 export async function reverseGeo(lat: number, lon: number) {
   try {
-    const URL = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${
+    const URL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${
       import.meta.env.VITE_WEATHER_API_KEY
     }`;
 
